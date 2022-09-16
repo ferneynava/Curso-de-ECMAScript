@@ -1,0 +1,23 @@
+{
+  "name": "curso-ecmascript",
+  "version": "1.0.0",
+  "description": "Nuevo Curso de ECMAScript de Platzi  ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferneynava/Nuevo-Curso-de-ECMAScript-.git"
+  },
+  "keywords": [
+    "javascript",
+    "ecmascript"
+  ],
+  "author": "Ferney Nava <ferneynava@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ferneynava/Nuevo-Curso-de-ECMAScript-/issues"
+  },
+  "homepage": "https://github.com/ferneynava/Nuevo-Curso-de-ECMAScript-#readme"
+}

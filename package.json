@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/ferneynava/Nuevo-Curso-de-ECMAScript-/issues"
   },
-  "homepage": "https://github.com/ferneynava/Nuevo-Curso-de-ECMAScript-#readme"
+  "homepage": "https://github.com/ferneynava/Nuevo-Curso-de-ECMAScript-#readme",
+  "type": "module"
 }

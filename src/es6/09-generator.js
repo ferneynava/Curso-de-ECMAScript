@@ -14,3 +14,5 @@ console.log(it.next().value);
 console.log(it.next().value);
 console.log(it.next().value);
 console.log(it.next().value);
+
+// Documentacion https://www.digitalocean.com/community/tutorials/understanding-generators-in-javascript-es

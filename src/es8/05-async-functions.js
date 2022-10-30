@@ -4,7 +4,7 @@ const fnAsync = () => {
             ? setTimeout(() => resolve("Async!!"), 2000) 
             : reject(new Error("Error"));
     })
-}
+} 
 
 const anotherFn = async () => {
     const something = await fnAsync();
@@ -14,5 +14,5 @@ const anotherFn = async () => {
 
 console.log("Before");
 anotherFn();
-console.log("After")
+console.log("After");
 

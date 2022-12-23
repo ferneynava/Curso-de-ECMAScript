@@ -7,5 +7,5 @@ const id = 0
 const orId = id || "Sin id"
 const nullishId = id ?? "Sin id"
 
-console.log(orId)
-console.log(nullishId)
+console.log(orId) // "Sin id"
+console.log(nullishId) // 0 

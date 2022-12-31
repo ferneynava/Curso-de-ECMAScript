@@ -9,7 +9,6 @@ class user {
     #speak (){
         console.log("Puede acceder ")
         return "Hello";
-        
     }
     
     greeting(){
@@ -32,3 +31,4 @@ const platzi = new user("Ferney Nava", 26);
 platzi.greeting();
 console.log(platzi.uAge); //Undefined no se puede acceder a uAge puesto de que esta privado(#) solo se puede acceder dentro del constructor 
 console.log(platzi.uAge = 45)
+

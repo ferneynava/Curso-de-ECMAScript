@@ -32,7 +32,8 @@
   - [Introducción](#introducción)
     - [Historia de JavaScript: ¿Qué es ECMAScript?](#historia-de-javascript-¿qué-es-ecmascript)
     - [¿Qué es el TC39?](#¿qué-es-el-tc39)
-
+  - [ECMAScript 6 (ES6 o ES2015)](#ecmascript-6-es6-o-es2015)
+    - [Let y const, y arrow function](#let-y-const-y-arrow-function)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -68,7 +69,8 @@ Entre 1995 y 2001, se enfrentaron Netscape y Microsoft para lograr posicionar co
 
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
-### ¿Qué es el TC39?
+--- 
+#### ¿Qué es el TC39?
 
 **TC39 grupo de desarrolladores, academicos encargados de revisar y actualizar cada nueva propuesta o funcionalidades, bajo el mando de ECMA. El estándar se caracteriza por una serie de pasos que cada propuesta sigue para publicar en alguna versión de ECMAScript** 
 
@@ -83,6 +85,127 @@ Entre 1995 y 2001, se enfrentaron Netscape y Microsoft para lograr posicionar co
 - Stage3: Candidate (se elige el candidato, vamos a tener una propuesta que va ayudar a mejorar el lenguaje.)
 
 - Stage4: Finished (va a ser desplegada en la version normalmente en JUNIO)
+
+---
+### ECMAScript 6 (ES6 o ES2015)
+
+#### Let y const, y arrow function
+
+**Nueva forma para declarar variables let y const**
+
+Las palabras reservadas **let** y **const** solucionan algunos problemas de **var** tales como el *scope*, *hoisting*, *variables globales*, *re-declaración* y *re-asignación* de variables 
+
+*Variables re-declaradas y re-asignadas*
+
+La re-declaración consiste en volver a declarar una variable, y la re-asignación es volver a asignar un valor a la variable. Cada palabra reservada (*var, let y const*) tiene una forma diferente de utilizar variables. 
+
+ - var: Puede ser re-declarada y re-asignada. 
+ - let: No se puede re-declarada pero si re-asignada. 
+ - const: No se puede re-declarada, ni re-asignada. 
+
+Al momento de re-declarar una variable con let y const, este producira un error "variable ya declarada"
+
+**Ejemplo de declaración y asignación en diferentes líneas** 
+
+```js
+// Declaración de variables 
+var nombreVar 
+let nombreLet
+
+// Asignación de variables
+nombreVar = "Soy Var"
+nombreLet = "Soy Let"
+```
+
+**Ejemplo de declarar y asignar con const de diferentes líneas de código**
+
+```js
+const valorPi
+valorPi = 3.14
+```
+
+**Ejemplo de re-declaración de variables**
+
+```js
+ var nombreVar = "Soy var"
+ let nombreLet = "Soy let"
+ const nombreConst = "Soy const"
+
+
+ // Re-declaración de variables
+ var nombreVar = "var"
+ console.log(nombreVar) // "var"
+
+ let nombreLet = "let" // SyntaxError: Identifier 'nombreLet' has already been declared.
+
+ const nombreConst = "const" //SyntaxError: Identifier 'nombreConst' has already been declared.
+```
+**Ejemplo de re-asignación de variables**
+
+```js
+var nombreVar = "Soy var"
+let nombreLet = "Soy let"
+const nombreConst = "Soy const"
+
+// Re-asignación de variables
+nombreVar = "otro var"
+console.log(nombreVar) // "otro var"
+
+nombreLet = "otro let"
+console.log(nombreLet) // "otro let"
+
+nombreConst = "Otro const" // TypeError: Assignment to constant variable.
+```
+
+*Funciones flecha (arrow functions)*
+
+Consiste en una función anónima. Las funciones anónimas permite no asignarle a un nombre a un conjunto de instrucciones que deseeamos ejecutarlo sin necesidad de asociarlo. 
+
+```js
+// Función tradicional
+
+function nombre (parámetros) {
+  return valorRetornado
+}
+
+// Función flecha
+
+const nombre = (parámetros) => {
+  return valorRetornado
+}
+```
+
+*Omitir paréntesis en las funciones flecha* 
+
+Si en la función existe un solo parámetro, puede omitir los paréntesis.
+
+```js 
+const multiplicaciónPorDos = num => {
+  return num * 2
+}
+```
+
+*Retorno implícito* 
+
+Las funciones flecha tienen un retorno implícito, es decir, se puede omitir la palabra reservada **return**, esto con el fin de que el código sea escrito en una sola línea. 
+
+```js
+// Función tradicional 
+function suma (num1, num2) {
+  return num1 + num2
+}
+
+// Función flecha
+const suma = (num1, num2) => num1 + num2
+```
+
+Si se requiere de más lineas y desea utilizarlo de una manera implícita, deberás envolver el cuerpo de la función entre paréntesis. 
+
+```js
+const suma = (num1, num2) => (
+  num1 + num2 
+)
+```
 
 
 ## Getting Started

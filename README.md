@@ -34,6 +34,7 @@
     - [¿Qué es el TC39?](#¿qué-es-el-tc39)
   - [ECMAScript 6 (ES6 o ES2015)](#ecmascript-6-es6-o-es2015)
     - [Let y const, y arrow function](#let-y-const-y-arrow-function)
+    - [Strings](#strings)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -206,7 +207,57 @@ const suma = (num1, num2) => (
   num1 + num2 
 )
 ```
+---
 
+#### Strings
+
+*Concatenación de caracteres* 
+
+Para crear una cadena larga, se puede utilizar la concatenación. Consiste en unir uno o varios caracteres,utilizando el signo de suma. 
+
+```js
+var nombre = "Ferney"
+var edad = 26
+var mensaje = "Mi nombre es " + nombre " y tengo " + edad + " años."
+
+console.log(mensaje) // "Mi nombre es Ferney y tengo 26 años." 
+```
+
+*Cómo utilizar las plantillas literales*
+
+Se emplea el caracter acento grave (`) y para incluir las variables se utiliza la sintaxis ```${variable}```
+
+```js
+var nombre = "Ferney"
+var edad = 26
+
+var mensaje = `Mi nombre es ${nombre} y tengo ${edad} años.`
+console.log(mensaje) // "Mi nombre es Ferney y tengo 26 años." 
+```
+
+*Plantilla multilínea*
+
+Consiste en crear mensajes que contengan varias líneas separadas entre si, utilizando las plantillas literales. Antes la forma de crear una plantilla multilínea es agregando \n al string. 
+
+```js
+var mensaje = "Línea 1 \n" + "línea 2"
+
+console.log(mensaje)
+// 'Línea 1 
+// línea 2'
+```
+
+Con ES6 solo se necesita utilizar las plantillas literales 
+
+
+```js
+var mensaje = `Línea 1
+línea 2`
+
+console.log(mensaje)
+// 'Línea 1 
+// línea 2'
+```
 
 ## Getting Started
 

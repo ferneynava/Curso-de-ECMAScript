@@ -35,6 +35,8 @@
   - [ECMAScript 6 (ES6 o ES2015)](#ecmascript-6-es6-o-es2015)
     - [Let y const, y arrow function](#let-y-const-y-arrow-function)
     - [Strings](#strings)
+    - [Parámetros por defecto](#parámetros-por-defecto)
+    
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -86,6 +88,8 @@ Entre 1995 y 2001, se enfrentaron Netscape y Microsoft para lograr posicionar co
 - Stage3: Candidate (se elige el candidato, vamos a tener una propuesta que va ayudar a mejorar el lenguaje.)
 
 - Stage4: Finished (va a ser desplegada en la version normalmente en JUNIO)
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
 ---
 ### ECMAScript 6 (ES6 o ES2015)
@@ -158,6 +162,8 @@ console.log(nombreLet) // "otro let"
 nombreConst = "Otro const" // TypeError: Assignment to constant variable.
 ```
 
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
 *Funciones flecha (arrow functions)*
 
 Consiste en una función anónima. Las funciones anónimas permite no asignarle a un nombre a un conjunto de instrucciones que deseeamos ejecutarlo sin necesidad de asociarlo. 
@@ -207,6 +213,9 @@ const suma = (num1, num2) => (
   num1 + num2 
 )
 ```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p> 
+
 ---
 
 #### Strings
@@ -249,7 +258,6 @@ console.log(mensaje)
 
 Con ES6 solo se necesita utilizar las plantillas literales 
 
-
 ```js
 var mensaje = `Línea 1
 línea 2`
@@ -258,6 +266,48 @@ console.log(mensaje)
 // 'Línea 1 
 // línea 2'
 ```
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+---
+
+#### Parámetros por defecto
+
+Ayudan a definir un valor inicial a las variables que son recibidas en la función. Esto permite mejorar la legibilidad y el mantenimiento del código. 
+
+```js
+// Antes de ES6 se utilizaba los valores por defecto de la siguiente forma. 
+function newUser(name, age, country){
+    var name = name || "Ferney";
+    var age = age || 24;
+    var country = country || "Co";
+    console.log(name, age, country);
+}
+
+newUser();
+newUser("Camila", 24, "MX");
+
+//Ahora con Es6 se utiliza de esta forma
+
+function newAdmin(name = "Ferney", age = 32, country = "CL"){
+    console.log(name, age, country);
+}
+
+newAdmin();
+newAdmin("Ana", 28, "PE");
+```
+
+*Posición de los parámetros por defecto* 
+
+Si Obligatoriamente necesitas el valor como argumento, es necesario que los parámetros por defecto siempre deben estar en las posiciones finales. 
+
+```js
+function sumar (number1, number2 = 0){...}
+sumar(3)
+```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+---
 
 ## Getting Started
 

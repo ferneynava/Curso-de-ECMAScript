@@ -36,6 +36,7 @@
     - [Let y const, y arrow function](#let-y-const-y-arrow-function)
     - [Strings](#strings)
     - [Parámetros por defecto](#parámetros-por-defecto)
+    - [Asignación de desestructuración](#asignación-de-desestructuración)
     
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
@@ -308,6 +309,125 @@ sumar(3)
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
 ---
+#### Asignación de desestructuración
+
+Es una expresión que consiste en extraer los valores de arrays o propiedades de objetos en distintas variables. 
+
+*Desestructuración de objetos* 
+
+Consiste en extraer las propiedades de un objeto en variables. Por medio del mismo nombre de la propiedad del objeto. 
+
+```js
+const objeto = {
+  prop1: "valor1",
+  prop2: "valor2",
+  ...
+}
+
+// Desestructuración 
+const { prop1, prop2} = objeto 
+```
+
+Antes de ES6, se necesitaba acceder al objeto con la notación punto o corchetes por cada propiedad que se necesita y asignar ese valor a una variable diferente. 
+
+```js
+var usuario = { nombre: "FerneyNava", edad: 26, plataforma: "Platzi" }
+
+var nombre = usuario.nombre
+var edad = usuario.edad
+var plataforma = usuario["plataforma"]
+
+console.log(nombre) // "FerneyNava"
+console.log(edad) // 26
+console.log(plataforma) // "Platzi"
+```
+
+Gracias a desestructuración de objetos podemos reralizar lo mismo, pero en una sola línea, logrando que el código sea más legible y mantenible
+
+```js
+const usuario = { nombre: "FerneyNava", edad: 26, plataforma: "Platzi" }
+const { nombre, edad, plataforma } = usuario
+
+console.log(nombre) //"FerneyNava"
+console.log(edad) // 26
+console.log(plataforma) // "Platzi
+```
+
+*Cambiar el nombre de las variables con desestructuración*
+
+Para cambiar los nombres de las propiedades del objeto, podemos utilizar la desestructuración de la siguiente forma: 
+
+```js
+const objeto = { prop1: "valor1", prop2: "valor2", ... }
+
+// Desestrcuturación
+const { prop1: newProp1, prop2: newProp2 } = objeto
+```
+
+**Ejemplo**
+
+```js
+const usuario = { nombre: "Ferney", edad: "26", plataforma: "Platzi"}
+
+const { nombre: name, edad: age, plataforma: platform } = usuario
+
+console.log(name) // "Ferney"
+console.log(age) // 26
+console.log(platform) // "Platzi"
+
+console.log(nombre) // Uncaught ReferenceError: nombre is not defined
+```
+
+*Desestructuración en parámetros de una función* 
+
+Al enviar un objeto como argumento en la invocación a la declaración de una función, puedes utilizar la desestructuración en los parámetros para obtener los valores diferentes. Hay que tener en cuenta que el nombre debe ser igual a la propiedad del objeto. 
+
+```js
+const usuario = { nombre: "Ferney", edad: "26", plataforma: "Platzi"}
+
+function datos( { nombre, edad, plataforma }){
+  console.log(nombre, edad, plataforma)
+}
+
+datos(usuario) // "Ferney", 23, "Platzi"
+```
+
+*Desestructuración de arrays*
+
+Consiste en extraer los valores de un array en variables, haciendo uso de las posiciones del array. 
+
+```js
+const array = [ 1, 2, 3, 4, 5] 
+
+// Desestructuración
+const [ uno, dos, tres ] = array 
+
+console.log(uno) // 1
+console.log(dos) // 2
+console.log(tres) // 3
+```
+
+*Desestructuración para valores retornados de una función*
+
+En el momento en que una función retorna un array, puedes guardarlo en una variable. Por ende, se puede utilizar la desestructuración para utilizar esos valores por separado de manera legible.
+
+En el sisguiente ejemplo, la función **useState** retorna un array con dos elementos: un valor y otra función actualizada. 
+
+```js
+function useState(value){
+  return [value, updateValue()]
+}
+
+//Sin desestructuración
+const estado = useState(3)
+const valor = estado[0]
+const actualizador = estado[1]
+
+//Con desestructuración 
+const [valor, actualizador] = useState(3)
+```
+
+
 
 ## Getting Started
 

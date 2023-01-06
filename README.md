@@ -37,6 +37,7 @@
     - [Strings](#strings)
     - [Parámetros por defecto](#parámetros-por-defecto)
     - [Asignación de desestructuración](#asignación-de-desestructuración)
+    - [Spread operator](#spread-operator)
     
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
@@ -426,7 +427,136 @@ const actualizador = estado[1]
 //Con desestructuración 
 const [valor, actualizador] = useState(3)
 ```
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
+--- 
+
+#### Spread operator
+
+Consiste en propagar los elementos de un iterable, ya sea un array o string utilizando tres puntos ( ... ) dentro de un array.
+
+```js
+// Para Strings 
+const array = [..."Ferney"] // [ "F", "e", "r", "n", "e", "y"]
+
+// En arrays
+const otherArray = [...array] // [ "F", "e", "r", "n", "e", "y"]
+```
+
+*Copiar arrays utilizando el operador de propagación*
+
+Realizar una copia de un array, tendras que tener cuidado de la referencia en memoria. Los arrays se guardan en una referencia en la memoria del computador, al crear una copia, este tendrá la misma referencia que el original. Por este motivo si cambias algo en la copia, tambien lo harás en el original. 
+
+```js
+const originalArray = [1,2,3,4,5]
+const copyArray = originalArray
+copyArray[0] = 0
+
+originalArray // [0,2,3,4,5]
+originalArray === copyArray // true
+```
+
+Para lograr evitar esto, utiliza el operador de propagación para crear una copia del array que utilice una  referencia en memoria diferente al original. 
+
+```js
+const originalArray = [1,2,3,4,5]
+const copyArray = [...originalArray]
+copyArray[0] = 0
+
+originalArray // [1,2,3,4,5]
+copyArray // [0,2,3,4,5]
+originalArray === copyArray //false
+```
+
+*Arrays y añadir elementos con el operador de propagación*
+
+Para unir dos arrays con el operador de propagación, debes separarlos por comas en un array. 
+
+```js
+const array1 = [1,2,3]
+const number = 4
+const array2 = [5,6,7]
+
+const otherArray = [...array1, number, ...array2]
+
+otherArray // [1,2,3,4,5,6,7]
+```
+
+*Cuidado con la copia en diferentes niveles de profundidad*
+
+El operador de propagación sirve para producir una copia en un solo nivel de profundidad, si existen objetos o arrays dentro del array a copiar. Entonces los sub-elementos en cada nivel, tendrán la misma referencia de memoria en la copia y en el original. 
+
+```js
+const originalArray = [1, [2,3], 4,5]
+const copyArray = [...originalArray]
+
+originalArray[1] === copyArray[1] // true
+```
+
+Recientemente salió una forma de producir una copia profunda con **StructuredCole**, es una característica reciente. Como es una caracteristica reciente tiene un soporte en navegadores de un 87.71%
+
+```js
+const originalArray = [1, [2,3], 4,5]
+const copyArray = structuredClone(originalArray)
+
+originalArray === copyArray // false
+originalArray[1] === copyArray[1] //false
+```
+**Recurso articulo escrito por [midudev](https://midu.dev/como-clonar-un-array-en-javascript/) Cómo clonar un Array en JavaScript de forma correcta y sin problema** 
+
+*Parámetro rest*
+
+Consiste en agrupar el residuo de elementos mediante la sintaxis de tres puntos ( ... ) seguido de una variable que contendrá los elementos en un array. Sirve para crear funciones que acepten cualquier número de argumentos para agruparlos en un array. 
+
+```js
+function hola (primero, segundo, ...resto){
+  console.log(primero, segundo) // 1 2
+  console.log(resto) // [3,4,5,6]
+}
+
+hola(1,2,3,4,5)
+```
+
+Tambien sirve para obtener los elementos restantes de un array u objeto usando desestructuración. 
+
+```js
+const objeto = {
+  nombre: "Ferney",
+  age: 26, 
+  plataforma: "Platzi"
+}
+
+const array = [0,1,2,3,4,5]
+
+const {plataforma, ...usuario} = objeto
+const [cero, ...positivos] = array
+
+usuario // { nombre: "Andres", age: 23 }
+positivos // [1, 2, 3, 4, 5]
+```
+
+Es importe que el parámetro rest siempre debe estar en la ultima posición de los parámetros de la función, puesto de que existirá un error de sintaxis. 
+
+```js
+function hola (primero, ...rest, ultimo){ ... }
+// SyntaxError: Rest element must be last element. 
+```
+
+*Rest vs operador de propagación*
+
+El parámetro rest agrupa el residuo de elementos y siempre debe estar en la última posición, el operador de propagación expande los elementos de un iterable en un array y no importa en que lugar esté situado. 
+
+```js
+const array = [1,2,3,4,5]
+
+function hola (primero, segundo, ...resto) { // <- Parámetro Rest
+  console.log(primero, segundo)  // 1 2
+  console.log(resto) // [3,4,5, "final"]
+}
+
+hola(...array, "final") //<- Operador de propagación
+//Lo mismo que hacer -> hola(1,2,3,4,5, "final")
+```
 
 
 ## Getting Started

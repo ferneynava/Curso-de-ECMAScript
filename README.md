@@ -39,6 +39,7 @@
     - [Asignación de desestructuración](#asignación-de-desestructuración)
     - [Spread operator](#spread-operator)
     - [Object literals](#object-literals)
+    - [Promesas](#promesas)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -607,6 +608,46 @@ const objeto = {
 
 objeto // { nombre: 'Andres', edad: 23, id: 1 }
 ```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+---
+
+#### Promesas
+
+Las promesas es una forma de manejar el asincronismo en JavaScipt y se representa como un objeto que puede generar un valor unico a futuro, tiene dos estados, o esta resuelta o incluye una razón por la cual no ha sido resuelta la solución. 
+
+*Cómo utilizar las promesas*
+
+La clase **Promise** y sus métodos **then** y **catch** fueron añadidos en ES6. Esto logra resolver un problema del manejo del asincronismo con *callbacks*, llamado *Callback Hell*
+
+La clases **Promise** es una función que recibe dos parámetros: 
+
+- *resolve*: cuando la promesa es resulta. 
+- *reject*: cuando la promesa es rechazada. 
+
+No es necesario utilizar como nombres estos dos parámetros, puedes utilizar cualquier nombre. 
+
+```js
+const promesa = () => {
+  return new Promise((resolver, reject) => {
+    if(something) {
+      //true o false
+      resolver("Se ha resuelto la promesa")
+    } else {
+      reject("Se ha rechazado la promesa")
+    }
+  })
+}
+
+promesa()
+  .then(respuesta => console.log(respuesta)) // En caso que se ejecute resolve
+  .catch(error => console.log(error)) // En caso que se ejecute reject
+```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+---
 
 ## Getting Started
 

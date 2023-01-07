@@ -41,6 +41,7 @@
     - [Object literals](#object-literals)
     - [Promesas](#promesas)
     - [Clases](#clases)
+    - [Module](#module)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -698,6 +699,130 @@ const platzi = new user("Ferney Nava", 26);
 console.log(platzi.uAge);
 console.log(platzi.uAge = 20);
 ```
+
+#### Module 
+
+ES6 introduce una forma de manejar código en archivos de manera modular. Esto involucra **exportar** funciones o variables de un archivo, e **importarlas** en otros archivos donde se necesite. 
+
+*Cómo utilizar los módulos de ECMAScript*
+
+Para utilizar los módulos, debes tener mínimo dos archivos, uno para exportar las funciones y otro que las importe para ejecutarlas. 
+
+Es importante de que si iniciaste un proyecto con NPM (Node Package Manager) con Node.js, necesitas esfecificar que el código es modular en el archivo.json de la siguiente manera: 
+
+```json
+// package.json
+{ ...
+  "type": "module"
+}
+```
+
+*Exportaciones de código*
+
+Consiste en crear funciones o variables para utilizarlas en otros archivos mediante la palabra reservada **export**. 
+
+Por ejemplos, en el archivo *math_function.js* declaramos una función para sumar dos valores, el cual lo exportaremos. 
+
+```js
+//math_function.js
+export const add = (x,y) => {
+  return x + y
+}
+```
+
+```js
+//math_function.js
+const add = (x,y) => {
+  return x + y
+}
+
+export { add, otherFunction, ...}
+```
+
+*Qué son las importaciones de código*
+
+Consiste en usar funciones o variables de otros archivos mediante la palabra reservada **import**, deberán estar siempre lo más arriba del archivo y utilizando el mismo nombre que el archivo original. 
+
+Por ejemplos, importamos la función *add* del archivo *math_function.js* para utilizarla en un archivo *main.js*
+
+```js
+// main.js
+
+import { add, otherFunction } from "./math_functions.js"
+
+add(2,2) // 4
+```
+
+Si importamos el módulo con un nombre diferente, existirá un error de sintaxis. 
+
+Para importar todas las funcionalidades de un archivo se utiliza un asteristico ( * ) y se puede cambiar el nombre para evitar la repetición de variables o funciones a través de la palabra reservada *as*. 
+
+```js
+// main.js
+
+import * as myMathModule from "./math_functions.js"
+
+myMathModule.add(2,2) // 4
+myMathModule.otherFunction() 
+```
+
+*Exportaciones por defecto*
+
+Si solo un valor será exportado, se puede utilizar **export default**. De esta manera no es necesario las llaves {} al exportar e importar. 
+
+```js
+//math_function.js
+
+export default function add (x,y){
+  return x + y;
+}
+```
+
+No se puede usar export default antes de declaraciones *const*, *let* o *var*, pero puedes exportarlas al final. 
+
+```js
+// ❌ Erróneo
+export default const add  = (x,y) => {
+    return x + y;
+}
+
+// ✅ Correcto
+const add  = (x,y) => {
+    return x + y;
+}
+
+export default add
+```
+
+*Importaciones por defecto*
+
+Si únicamente un valor será importado, entonces se puede utilizar cualquier nombre en la importación. De esta manera no se necesario las llaves {}.
+
+```js
+//Las siguientes importaciones son válidas
+import  add  from './math_functions.js'
+import  suma  from './math_functions.js'
+import  cualquierNombre  from './math_functions.js'
+```
+
+*Combinar ambos tipos de exportaciones e importaciones*
+
+Teniendo las importaciones y exportaciones, nombradas y por defecto, entonces podemos combinarlas en un mismo archivo. 
+
+```js
+// module.js
+
+export const myExport = "Hola"
+function myFunction() { ... }
+
+export default myFunction 
+
+// main.js
+import myFunction, { myExport } from "/module.js"
+```
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+--- 
 
 ## Getting Started
 

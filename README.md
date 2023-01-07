@@ -38,7 +38,7 @@
     - [Parámetros por defecto](#parámetros-por-defecto)
     - [Asignación de desestructuración](#asignación-de-desestructuración)
     - [Spread operator](#spread-operator)
-    
+    - [Object literals](#object-literals)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -558,6 +558,55 @@ hola(...array, "final") //<- Operador de propagación
 //Lo mismo que hacer -> hola(1,2,3,4,5, "final")
 ```
 
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+--- 
+
+#### Object literals 
+
+Consiste en crear objetos a partir de variables sin repetir el nombre. Anteriormente para crear un objeto a partir de variables consistía en la siguiente manera: 
+
+```js
+const nombre = "Ferney"
+const edad = 23
+
+const objeto = {
+  nombre: nombre
+  edad: edad
+}
+
+
+objeto //  { nombre: 'Andres', edad: 23  }
+```
+
+*Cómo utilizar objetos literales*
+
+Gracias a los parámetros de objeto puedes obviar la repetición de nombre,JavaScript creará la propiedad a partir del nombre de la variable con su respectivo valor. 
+
+```js
+const nombre = "Ferney"
+const edad = 26
+
+const objeto = {nombre, edad}
+
+objeto // { nombre: "Andres", edad: 23 }
+```
+
+El resultado es el mismo, pero sin la necesidad de repetir palabras. Se puede combinar con variables que su propiedad tiene un nombre diferente. 
+
+```js
+const nombre = "Ferney"
+const edad = 26
+const esteEsUnID = 1
+
+const objeto = {
+  nombre,
+  edad,
+  id: esteEsUnID
+}
+
+objeto // { nombre: 'Andres', edad: 23, id: 1 }
+```
 
 ## Getting Started
 

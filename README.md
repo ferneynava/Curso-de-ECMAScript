@@ -40,6 +40,7 @@
     - [Spread operator](#spread-operator)
     - [Object literals](#object-literals)
     - [Promesas](#promesas)
+    - [Clases](#clases)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -647,7 +648,56 @@ promesa()
 
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
----
+--- 
+
+#### Clases
+
+Class es una forma para crear clases y manejar la herencia, logrando resolver problemas con el paradigma de programación orientado a objetos. 
+
+*Estructura de las clases en JavaScript*
+
+La estructura de clases en JavaScript consiste en: 
+
+- Definir la clase con la palabra reservada class, seguido del nombre.
+
+- La función constructora sirve para crear las variables necesarias en la instancia del objeto, a partir de los argumentos en la instancia. 
+
+- Para definir atributos necesitas el contexto this, que representa la instancia del objeto. 
+
+- Métodos para definir las acciones de las clases. 
+
+- Para crear una instancia, deberás declarar una variable e invocar la clase con la palabra reservada new.  
+
+```js
+class user {
+    // constructor 
+    constructor(name, age){
+        this.name = name;
+        this.age = age; 
+    }
+
+    // metodos 
+    speak (){
+        return "Hello";
+    }
+
+    greeting(){
+        return `${this.speak()} ${this.name}`;
+    }
+
+    get uAge() { //get obtener. Obtener el valor de age
+        return this.age;
+    }
+
+    set uAge(n) { //set asignar. Asignar al age el valor de n
+        this.age = n;
+    }
+}
+
+const platzi = new user("Ferney Nava", 26);
+console.log(platzi.uAge);
+console.log(platzi.uAge = 20);
+```
 
 ## Getting Started
 

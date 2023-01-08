@@ -42,6 +42,7 @@
     - [Promesas](#promesas)
     - [Clases](#clases)
     - [Module](#module)
+    - [Generator](#generator)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -823,6 +824,103 @@ import myFunction, { myExport } from "/module.js"
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
 --- 
+
+#### Generator
+
+Son funciones especiales que pueden pausar su ejecución, luego volver al punto donde se quedaron, recordando su scope y seguir retornando valores. 
+
+*Cómo utilizar generadores*
+
+La sintaxis de los generadores es la siguiente: 
+
+- La palabra reservada function* (con el asterisco al final)
+- La palabra reservada *yield* que hace referencia al valor retornado cada vez que se invoque, recordando eñ valor anterior. 
+- Crear una variable a partir de la función generadora. 
+- El método *next* devuelve un objeto que contiene una propiedad *value* con cada valor de yield; y otra propiedad *done* con el valor *true* o *false* si el generador ha terminado.
+
+```js
+function* nombre (parámetros){
+  yield (primer valor retornado)
+  yield (segundo valor retornado)
+  ...
+  yield (último valor retornado)
+}
+
+//crear el generador
+const generador = nombre(argumentos)
+
+// Invocaciones
+generador.next().value // primer valor retornado 
+generador.next().value // segundo valor retornado 
+... 
+generador.next().value // último valor retornado
+```
+
+*Ejemplo de un generador*
+
+```js
+function* generator (){
+  yield 1
+  yield 2
+  yield 3
+}
+
+const generador = generator()
+
+generador.next().value // 1
+generador.next().value // 2
+generador.next().value // 3
+generador.next() // {value: undefined, done: true}
+```
+
+*Cómo utilizar for of y for in*
+
+Existen dos nuevas formas de utilizar ciclos repetitivos. El bucle **for valor  of iterable** recorre iterables, como arrays, Map, Set e incluso un generador. 
+
+El valor es cada elemento del iterable, se inicia con *let nombre*. Puede tener cualquier nombre. 
+
+```js
+const array = [5, 6, 3, 2, 1]
+
+for (let numero of array){
+  console.log(numero) // 5, 6, 3, 2, 1
+}
+```
+
+Hay que tener en cuenta que solo podrás acceder a sus valores, y no a sus referencias, por lo que si quieres cambiar los elementos del array, necesitarás un índice array(indice).
+
+```js
+for (let numero of array){
+  numero *= 2
+  console.log(numero) // 10 12 6 4 2
+}
+
+console.log(array) // [5, 6, 3, 2, 1] 
+```
+
+Si intentas recorrer un objeto de esta forma *for elemento of objeto*, ocurrirá un error, porque un objeto no es un iterable. En su lugar se utiliza *for elemento in objeto*, que recorrerá las propiedades del objeto. 
+
+```js
+const objeto = { a: 1, b: 2, c: 3 }
+
+for(let elemento in objeto) {
+  console.log(elemento) // "a" "b" "c"
+}
+```
+
+Si utiliza *for elemento in array*, no dará error, pero el resultado no será el esperado, puesto de que los arrays son un tipo de objeto donde cada propiedad es el índice del valor del array o del iterable. 
+
+```js
+const array = { 5, 4, 3, 2, 1 }
+
+for(let elemento in array) {
+  console.log(elemento) // "0" "1" "2" "3" "4"
+}
+```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+---
 
 ## Getting Started
 

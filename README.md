@@ -43,6 +43,7 @@
     - [Clases](#clases)
     - [Module](#module)
     - [Generator](#generator)
+    - [Set-add](#set-add)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -920,9 +921,35 @@ for(let elemento in array) {
 
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
----
+--- 
 
-## Getting Started
+#### Set-add
+
+Es una nueva estructura de datos para almacenar elementos únicos, es decir, sin elementos repetidos. 
+
+*Cómo utilizar los Sets*
+
+Para iniciar un *Set*, se debe crear una instancia de su clase a partir de un iterable. Un iterable es un objeto que permite recorrer una colección, como por ejemplo un *array*
+
+```js
+const set = new Set(iterable)
+```
+
+*Manipular los Sets*
+
+Para manipular los sets, existen los siguiente métodos: 
+
+- add(value): Añade un nuevo valor. 
+- delete(value): Elimina un elemento que contiene el Set, retorna un booleano si existía o no el valor. 
+- has(value): Retorna un booleano si existe o no el valor dentro del Set. 
+- clear(value): Elimina todos los valores del Set. 
+- size: Retorna la cantidad de elementos del Set. 
+
+**Recurso Map y Set [javaScript.info](https://es.javascript.info/map-set#filtrar-miembros-unicos-del-array)**
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+--- 
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.

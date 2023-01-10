@@ -36,7 +36,7 @@ console.log(saludo.includes("mundo", -5)) // true se encuentra en el string
 
 ///  objetos 
 // En objetos tambien existen formas para saber si existe una propiedad 
-         //Evalua solo las claves de los objetos
+         //Evalua solo las clases de los objetos
     // - La palabra reservada in
     // - El metodo de objetos hasOwnProperty
     // - El metodo Object.hasOwm, que recibe el objeto y la propìedad a evaluar
@@ -57,10 +57,9 @@ console.log(Object.hasOwn(letras, "a")); //true en el objeto se encuentra la cla
 const letrass = {d: 4, e: 5, f: 7}
 
 console.log(letrass)
-console.log(letrass.hasOwnProperty("toString")); 
+console.log(letrass.hasOwnProperty("toString")); //false
 
 console.log("toString" in letrass) //true por el objeto letrass tiene un prototipo que se llama toString
-console.log(letrass.hasOwnProperty("toString")); //false 
 console.log(Object.hasOwn(letrass, "toString")); //false
 
 

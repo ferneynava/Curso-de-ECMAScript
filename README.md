@@ -41,9 +41,11 @@
     - [Object literals](#object-literals)
     - [Promesas](#promesas)
     - [Clases](#clases)
-    - [Module](#module)
+    - [Module](#module) 
     - [Generator](#generator)
     - [Set-add](#set-add)
+  - [ECMAScript 7 (ES7 o ES2016)](#ecmascript-7-es7-o-es2016)
+    - [Operador de potenciación y array includes](#operador-de-potenciación-y-array-includes)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -951,8 +953,100 @@ Para manipular los sets, existen los siguiente métodos:
 
 --- 
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+### ECMAScript 7 (ES7 o ES2016)
+
+#### Operador de potenciación y array includes 
+
+Consiste en elevar una base a un exponente utilizando el doble asterisco ( ** )
+
+**base ** exponente**
+
+Ejemplo, calcula la potencia del siguiente número 5^3 
+
+```js
+const potencia = 5**3
+
+console.log(potencia) // 125
+```
+
+*Método includes*
+
+Determina si un array o string incluye un determinado elemento. Devuelve **true** o **false**, si existe o no respectivamente. 
+
+Este método recibe dos argumentos: 
+- El elemento a comparar
+- El índice inciial desde donde comparar hatas el último elemento. 
+
+*Índices positivos y negativos*
+
+Los índices positivos comienzan desde 0 hasta la longitud total menos uno, de izquierda a derecha del array. 
+
+```js
+[0,1,2,3,....., lenght-1]
+```
+
+Los índices negativos comienzan desde -1 hasta el negativo de la longitud total del *array*, de derecha a izquierda. 
+
+```js
+[-lenght, ..., -3, -2, -1]
+```
+
+*Ejemplos utilizando el método includes*
+
+Método includes se utiliza para arrays y strings. El método es sensible a mayúsculas, minúsculas y expacios. 
+
+```js
+// Utilizando strings
+const saludo = "Hola mundo"
+
+saludo.includes("Hola") // true
+saludo.includes("Mundo") // false
+saludo.includes(" ") // true
+saludo.includes("Hola", 1) // false
+saludo.includes("mundo", -5) // true
+```
+
+```js
+// Utilizando arrays
+const frutas = ["manzana", "pera", "piña", "uva"]
+
+frutas.includes("manzana") // true
+frutas.includes("Pera") // false
+frutas.includes("sandía") // false
+frutas.includes("manzana", 1) // false
+frutas.includes("piña", -1) // false
+frutas[0].includes("man") // true 
+```
+
+En objetos tambien existen formas para saber si existe una propiedad. Solo evalua las clases de los objetos. Con la siguiente palabra resevada y los siguientes metodos. 
+
+- La palabra reservada in; evalua todas las propiedades del objeto y del prototipo.
+- El metodo de objetos **hasOwnProperty**; Evalúa solamente las propiedades del objeto.
+- El metodo **Object.hasOwm**, que recibe el objeto y la propiedad a evaluar.
+
+```js
+// Utilizando arrays
+const letras = {
+  a: 1,
+  b: 2, 
+  c: 3
+}
+
+console.log("a" in letras) //true en el objeto se encuentra la clave "a"
+console.log(letras.hasOwmProperty("a")) // true en el objeto se encuentra la clave "a"
+console.log(Object.hasOwm(letras, "a")) // true en el objeto se encuentra la clase "a"
+
+const letrass = {d: 4, e: 5, f: 7}
+
+console.log(letrass)
+console.log(letrass.hasOwmProperty("toString")) // false
+console.log("toString" in letras) // true por el objeto letrass tiene una prototipo que se llama toString
+```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+--- 
+
 
 ### Prerequisites
 

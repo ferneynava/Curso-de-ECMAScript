@@ -48,6 +48,7 @@
     - [Operador de potenciación y array includes](#operador-de-potenciación-y-array-includes)
   - [ECMAScript 8 (ES8 o ES2017)](#ecmascript-8-es8-o-es2017)
     - [Opject entries y object values](#object-entries-y-object-values)
+    - [String padding y trailing commas](#string-padding-y-trailing-commas)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -1102,9 +1103,65 @@ const usuario = {
   age: 26
 }
 
-Object.keys(usuario)
+Object.values(usuario)
 // ["Ferney", "ferneynava@gmail.com", 26]
 ```
+
+#### String padding y trailing commas
+
+*Rellenar un string o padding*
+
+Padding consiste en rellenar un *string* por el principio o por el final, con el carácter especificado, repetido hasta que complete la longitud máxima. 
+
+Este método recibe dos argumentos:
+
+- La longitud máxima a rellenar, incluyento el string inicial. 
+- El *string* para rellenar, por defecto, es un espacio. 
+
+*Método padStart*
+
+Este método completa un *string* con otro *string* en el inicio hasta tener total de caracteres especificado. 
+
+```js
+"abc".padStart(10) // "       abc"
+"abc".padStart(10, "foo") //"foofoofabc"
+"abc".padStart(6, "123456") //123abc"
+"abc".padStart(8, "0") //00000abc
+"abc".padStart(1) // "abc"
+```
+
+*Método padEnd*
+
+Este método completa un *string* con otro *string* en el final hasta tener un total de caracteres especificado. 
+
+```js
+"abc".padEnd(10) // "abc      "
+"abc".padEnd(10, "foo") // "abcfoofoof"
+"abc".padEnd(6, "123456") // "abc123"
+"abc".padEnd(1) // "abc"
+```
+
+*Trailing commas*
+
+Consisten en comas al final de objetos o arrays que facilitan añadir nuevos elementos y evitar errores de sintaxis. 
+
+```js
+const usuario = {
+  name: "Ferney", 
+  email: "ferneynava@gmail.com"
+  age: 26, //<-- Trailing comma
+}
+
+const nombres = [
+  "Ferney", 
+  "Erika",
+  "Pedro", //<--- Trailinf comma
+]
+```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+--- 
 
 ### Prerequisites
 

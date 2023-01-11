@@ -46,6 +46,8 @@
     - [Set-add](#set-add)
   - [ECMAScript 7 (ES7 o ES2016)](#ecmascript-7-es7-o-es2016)
     - [Operador de potenciación y array includes](#operador-de-potenciación-y-array-includes)
+  - [ECMAScript 8 (ES8 o ES2017)](#ecmascript-8-es8-o-es2017)
+    - [Opject entries y object values](#object-entries-y-object-values)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -1047,6 +1049,62 @@ console.log("toString" in letras) // true por el objeto letrass tiene una protot
 
 --- 
 
+### ECMAScript 8 (ES8 o ES2017)
+
+#### Object entries y object values
+
+Los métodos de transformación de objectos a *arrays* sirven para obtener la información de las propiedades, sus valores o ambas. Devuelve una matriz de pares clave-valor. 
+
+*Obtener los pares de valor de un objeto en un array* 
+
+*Object.entries()* devuelve un *array* con las entries en forma [propiedad, valor] del objeto enviado como argumento. 
+
+```js
+const usuario = {
+  name: "Ferney", 
+  email: "ferneynava@gmail.com"
+  age: 26
+}
+
+Object.entries(usuario)
+/*
+ [
+  [ "name", "ferney"],
+  [ "email", "ferneynava@gmail.com"],
+  [ "age", 23]
+ ]
+*/
+```
+
+*Obtener las propiedades de un objeto en un array*
+
+*Object.keys()* devuelve un array con las propiedades (*keys*) del objeto enviado como argumento. 
+
+```js
+const usuario = {
+  name: "Ferney", 
+  email: "ferneynava@gmail.com"
+  age: 26
+}
+
+Object.keys(usuario)
+// ["name", "email", "age"]
+```
+
+*Obtener los valores de un objeto en un array*
+
+*Object.values()* devuelve un *array* con los valores de cada propiedad del objeto enviado como argumento. 
+
+```js
+const usuario = {
+  name: "Ferney", 
+  email: "ferneynava@gmail.com"
+  age: 26
+}
+
+Object.keys(usuario)
+// ["Ferney", "ferneynava@gmail.com", 26]
+```
 
 ### Prerequisites
 

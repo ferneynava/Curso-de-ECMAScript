@@ -47,8 +47,9 @@
   - [ECMAScript 7 (ES7 o ES2016)](#ecmascript-7-es7-o-es2016)
     - [Operador de potenciación y array includes](#operador-de-potenciación-y-array-includes)
   - [ECMAScript 8 (ES8 o ES2017)](#ecmascript-8-es8-o-es2017)
-    - [Opject entries y object values](#object-entries-y-object-values)
+    - [Object entries y object values](#object-entries-y-object-values)
     - [String padding y trailing commas](#string-padding-y-trailing-commas)
+    - [Funciones asíncronas](#funciones-asíncronas)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -1162,6 +1163,31 @@ const nombres = [
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
 --- 
+
+#### Funciones asíncronas
+
+*funciones asíncronas* 
+
+La función asíncrona se crea mediante la palabra reservada *async*  y retorna una promesa. 
+
+```js
+async funcition asyncFunction () {...}
+
+const asyncFunction = async () => {...}
+```
+
+La palabra reservada await **significa que espera hasta que una promesa sea resuelta** y solo funciona dentro de una función asíncrona. Los bloques try / catch sirven para manejar si la promesa ha sido resuelta o rechazada. 
+
+```js
+async funcition asyncFunction () {
+  try {
+    const respuesta = await promesa()
+    return respuesta
+  } catch (error) {
+    return error
+  }
+}
+```
 
 ### Prerequisites
 

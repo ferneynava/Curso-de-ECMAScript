@@ -56,6 +56,8 @@
   - [ECMAScript 10 (ES10 o ES2019)](#ecmascript-10-es10-o-es2019)
     - [Flat-map y trimStart-trimEnd](#flat-map-y-trimstart-trimend)
     - [Try catch y fromEntries](#try-catch-y-fromentries)
+  - [ECMAScript 11 (ES11 o ES2020)](#ecmascript-11-es11-o-es2020)
+    - [Optional chaining](#optional-chaining)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -1451,6 +1453,51 @@ console.log(usuario)
   age: 26
 }
 ```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+---
+
+### ECMAScript 11 (ES11 o ES2020) 
+
+#### Optional chaining
+
+Cuando intentas acceder a propiedades de un objeto que no existen, JavaScript retornará *undefined*. 
+
+```js
+const usuario = {}
+console.log(usuario.redes) // undefined
+```
+
+Al acceder a una propiedad más profunda de un objeto, que previamente fue evaluada como *undefined*, el programa se detendrá y mostrará un error. 
+
+```js
+const usuario = {}
+console.log(usuario.redes.facebook) 
+//  TypeError: Cannot read properties of undefined (reading 'facebook')
+```
+
+Ejecutar *undefined.facebook* es un error de tipo, debido a que *undefined* es un primitivo, no es un objeto. 
+
+*Cómo utilizar el encadenamiento opcional*
+
+Optional chaining (?.) detiene la evaluación del objeto cuando el valor es *undefined* o *null* antes del (?.), retornara *undefined* sin detener el programa por un error. 
+
+```js
+const usuario = {}
+console.log(usuario.redes?.facebook) 
+//undefined
+```
+
+Pero, ¿por qué usaría propiedades de un objeto vacío? Cuando realizas peticiones, el objeto no contiene la información solicitada en seguida, por ende, necesitas que el programa no colapse hasta que lleguen los datos y puedas utilizarlos. 
+
+*No abuses del encadenamiento opcional*
+
+El encadenamiento opcional se debe utilizar únicamente cuando problamente un valor no exista. 
+
+Por ejemplo, en un objeto *usuario* que siempre existe, pero la propiedad redes es opcional, entonces se debería escribir *usuario.redes?.facebook* y no *usuario?.redes?.facebook*. 
+
+Si abusas del encademiento opcional y existe un error en un objeto, el programa podría "ocultarlo" por un *undefined*, provocando que el *debugging* sea más complicado. 
 
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 

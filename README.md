@@ -52,7 +52,9 @@
     - [Funciones asíncronas](#funciones-asíncronas)
   - [ECMAScript 9 (ES9 o ES2018)](#ecmascript-9-es9-o-es2018)
     - [Expresiones regulares](#expresiones-regulares)
-    - [Promise.finally](#promisefinally)  
+    - [Promise.finally](#promisefinally) 
+  - [ECMAScript 10 (ES10 o ES2019)](#ecmascript-10-es10-o-es2019)
+    - [Flat-map y trimStart-trimEnd](#flat-map-y-trimstart-trimend)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -1311,6 +1313,98 @@ async function forAwait(){
   }
 }
 ```
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+---
+
+### ECMAScript 10 (ES10 o ES2019)
+
+#### Flat-map y trimStart-trimEnd
+
+*Qué es el aplanamiento de arrays*
+
+Consiste en transformar un array de arrays a una sola dimensión. Los métodos *flat* y *flatMap* permitirán realizar el aplanamiento. 
+
+*Método flat*
+
+Devuelve un *array* donde los sub-arrays han sido propagados hasta una profundidad especifica. 
+
+Este método es inmutable, es decir, retorna un nuevo array con los cambios y no cambia el array original. 
+
+Este método recibe un argumento: 
+
+- La *profundidad* del aplanamiento, por defecto, tiene un valor de 1. 
+
+Se puede aplanar todos los sub-arrays en una sola dimensión, utilizando el valor de *Infinity*
+
+```js
+const array = [1,2[3,4],5,6]
+const result = array.flat()
+result // [1,2,3,4,5,6]
+
+const array2 = [1, 2, [3, 4, [5, 6]]]
+const result2 = array2.flat()
+result2 // [1, 2, 3, 4, [5, 6]]
+
+const array3 = [1, 2, [3, 4, [5, 6]]]
+const result3 = array3.flat(2)
+result3 // [1, 2, 3, 4, 5, 6]
+
+const array4 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]]
+const result4 = array4.flat(Infinity)
+result4 // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+*Método flatMap*
+
+Es un combinación de los métodos *map* y *flat*. Primero realiza la interación  de los elementos del array (como si fuera map), y después los aplana en una sola profundidad (como si fuera *flat*)
+
+Este método es **inmutable**, es decir, retorna un nuevo array con los cambios y no cambia el array original. 
+
+El método recibe los mismos argumentos que el método map. 
+
+```js
+const strings = ["Nunca pares", "de Aprender"]
+strings.map(string => string.split(""))
+// [['Nunca', 'pares'], ['de', 'Aprender']]
+strings.flatMap(string => string.split(""))
+// ['Nunca', 'pares', 'de', 'Aprender']
+
+const numbers = [1,2,3,4]
+numbers.map(number => [number * 2])
+// [[2],[4],[6],[8]]
+numbers.flatMap(number => [number *2])
+// [2,4,6,8]
+
+// Cuidado, primero hace el map y luego el flat 
+const numbers2 = [1,[2,3], 4, 5]
+numbers2.flatMap(number => [number * 2])
+// [2, NaN, 8, 10]
+// Recuerda: NaN = No a Number
+```
+
+*Eliminar espacios en blanco de un string*
+
+Existen tres métodos para *eliminar espacio en blanco* de un string
+
+- El método *trim* elimina los espacios en blanco al inicio y al final. 
+- EL método *trimStart* o *trimLeft* elimina los espacios al inicio. 
+- El método *trimEnd* o *trimRight* elimina los espacios al final. 
+
+```js
+const saludo = "    hola       " 
+const result1 = saludo.trim()
+const result2 = saludo.trimStart()
+const result3 = saludo.trimEnd()
+
+result1 // "hola"
+result2 // "hola        "
+result3 // "       hola"
+```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+---
 
 ### Prerequisites
 

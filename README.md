@@ -50,6 +50,8 @@
     - [Object entries y object values](#object-entries-y-object-values)
     - [String padding y trailing commas](#string-padding-y-trailing-commas)
     - [Funciones asíncronas](#funciones-asíncronas)
+  - [ECMAScript 9 (ES9 o ES2018)](#ecmascript-9-es9-o-es2018)
+    - [Expresiones regulares](#expresiones-regulares)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -493,9 +495,9 @@ const otherArray = [...array1, number, ...array2]
 otherArray // [1,2,3,4,5,6,7]
 ```
 
-*Cuidado con la copia en diferentes niveles de profundidad*
+*Cuidado con la copia en diferentes niveles de profundidad arrays*
 
-El operador de propagación sirve para producir una copia en un solo nivel de profundidad, si existen objetos o arrays dentro del array a copiar. Entonces los sub-elementos en cada nivel, tendrán la misma referencia de memoria en la copia y en el original. 
+El operador de propagación sirve para producir una copia en un solo nivel de profundidad, si existen arrays dentro del array a copiar. Entonces los sub-elementos en cada nivel, tendrán la misma referencia de memoria en la copia y en el original. 
 
 ```js
 const originalArray = [1, [2,3], 4,5]
@@ -504,15 +506,67 @@ const copyArray = [...originalArray]
 originalArray[1] === copyArray[1] // true
 ```
 
+*Propiedades de propagación en un objeto*
+
+Consiste en expandir las propiedades de un objeto utilizando el [spread operator](#spread-operator). Funciona para crear nuevos objetos a partir de otros. 
+
+```js
+const objeto = {
+  nombre: "Ferney",
+  age: 26,
+}
+
+const usuario = {
+  ...objeto, 
+  plataforma: "Platzi"
+}
+```
+
+*Crear copias de objetos utilizando las propiedades de propagación*
+
+Semejante a crear copias de *arrays* utilizando el operador de propagación, se puede realizar copias de objetos en un solo nivel mediante las propiedades de propagación. 
+
+Logrando que el segundo objeto tenga referencia en memoria diferente al original. 
+
+```js
+const objetoOriginal = {a: 1, b: 2}
+const objetoReferencia = objetoOriginal 
+const objetoCopia = {...objetoOriginal}
+
+objetoReferencia === objetoOriginal // true
+objetoOriginal === objetoCopia // false
+```
+
+*Cuidado con la copia en diferentes niveles de profundidad objetos*
+
+El operador de propagación sirve para crear una copia en un soslo nivel de profundidad, si existen objetos dentro de un objeto a copiar. Entonces los sub-elementos en cada nivel, tendrán la misma referencia en el copia y en el original. 
+
+```js
+const original = {datos: [1, [2, 3], 4, 5]}
+const copia = {...original}
+
+original === copia // false
+original["datos"] === copia["datos"] // true 
+```
+
 Recientemente salió una forma de producir una copia profunda con **StructuredCole**, es una característica reciente. Como es una caracteristica reciente tiene un soporte en navegadores de un 87.71%
 
 ```js
+// Array
 const originalArray = [1, [2,3], 4,5]
 const copyArray = structuredClone(originalArray)
 
 originalArray === copyArray // false
 originalArray[1] === copyArray[1] //false
+
+// Objeto
+const original = {datos: [1, [2, 3], 4, 5]}
+const copia = structuredClone(original)
+
+original === copia // false
+original["datos"] === copia["datos"] // false
 ```
+
 **Recurso articulo escrito por [midudev](https://midu.dev/como-clonar-un-array-en-javascript/) Cómo clonar un Array en JavaScript de forma correcta y sin problema** 
 
 *Parámetro rest*
@@ -569,6 +623,7 @@ hola(...array, "final") //<- Operador de propagación
 //Lo mismo que hacer -> hola(1,2,3,4,5, "final")
 ```
 
+
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
 --- 
@@ -585,7 +640,6 @@ const objeto = {
   nombre: nombre
   edad: edad
 }
-
 
 objeto //  { nombre: 'Andres', edad: 23  }
 ```
@@ -1187,6 +1241,23 @@ async funcition asyncFunction () {
     return error
   }
 }
+```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+--- 
+
+### ECMAScript 9 (ES9 o ES2018)
+
+#### Expresiones regulares
+
+Las expresiones regulares o RegEx (regular expresions) son **patrones de búsqueda y manipulación de cadenas de caracteres**. 
+
+En JavaScript se crea este patrón entre barras inclinadas (/patrón/) y se utiliza métodos para hacer coincidir la búsqueda. 
+
+```js
+const regexData = /([0-9]{4})-([0-9]{2})-([0-9]{2})/ 
+const match = regesData.exec("2018-04-20")
 ```
 
 ### Prerequisites

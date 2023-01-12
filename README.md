@@ -52,6 +52,7 @@
     - [Funciones asíncronas](#funciones-asíncronas)
   - [ECMAScript 9 (ES9 o ES2018)](#ecmascript-9-es9-o-es2018)
     - [Expresiones regulares](#expresiones-regulares)
+    - [Promise.finally](#promisefinally)  
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -1258,6 +1259,57 @@ En JavaScript se crea este patrón entre barras inclinadas (/patrón/) y se util
 ```js
 const regexData = /([0-9]{4})-([0-9]{2})-([0-9]{2})/ 
 const match = regesData.exec("2018-04-20")
+```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+--- 
+
+#### Promise.finally
+
+*Método finally en promesas*
+
+Consiste en ejecutar código después que una promesa haya sido ejecutada como resultado o rechazada. 
+
+```js
+promesa()
+  .then(response => console.log(response)) // Promesa resuelta
+  .catch(error => console.log(error)) // Promesa rechazada
+  .finally(() => console.log("Finalizado")) // Código final
+```
+
+*Generados asíncronos*
+
+Los generadores asíncronos son semejantes a los [Generadores](#generator), pero combinando sintáxis de promesas. 
+
+```js
+async function* anotherGenerator(){
+  yield await Promise.resolve(1)
+  yield await Promise.resolve(2)
+  yield await Promise.resolve(3)
+}
+
+const generador = anotherGenerator()
+  generador.next().then(respuesta => console.log(respuesta.value))
+  generador.next().then(respuesta => console.log(respuesta.value))
+  generador.next().then(respuesta => console.log(respuesta.value))
+```
+
+*Cómo utilizar for await*
+
+*for await* 
+
+Es un ciclo repetitivo que se maneja asíncronamente. El ciclo siempre debe estar dentro de una función con *async*. 
+
+El valor es cada elemento del iterable puede tener cualquier nombre. 
+
+```js
+async function forAwait(){
+  const nombre = ["Ferney", "Erika", "Pedro"]
+  for await(let valor of nombre) {
+    console.log(valor)
+  }
+}
 ```
 
 ### Prerequisites

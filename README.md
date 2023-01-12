@@ -55,6 +55,7 @@
     - [Promise.finally](#promisefinally) 
   - [ECMAScript 10 (ES10 o ES2019)](#ecmascript-10-es10-o-es2019)
     - [Flat-map y trimStart-trimEnd](#flat-map-y-trimstart-trimend)
+    - [Try catch y fromEntries](#try-catch-y-fromentries)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -1400,6 +1401,55 @@ const result3 = saludo.trimEnd()
 result1 // "hola"
 result2 // "hola        "
 result3 // "       hola"
+```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+---
+
+#### Try catch y fromEntries 
+
+*Parámetro opcional de catch*
+
+El parametro de *catch*, permite omitir el error si es necesario. 
+
+```js
+try {
+  // Manejar el código 
+} catch (err) {
+  // Se utiliza el parámetro 'err'
+}
+
+try {
+  // Manejar el código 
+} catch {
+  // Manejar el error sin el parámetro. 
+}
+```
+
+Se recomienda manejar el error como parámetro, puesto de que tiene más información del problema. 
+
+*Cómo transformar un array de arrays en un objeto*
+
+El metodo **Object.fromEntries** devuelve un objeto a partir de un arrays donde sus elementos son las *entries* en forma [propiedad, valor]
+
+Se puede considerar la opción inversa de **Object.entries()**. *entries()*  transforma el objectos a arrays y en cambio el *fromEntries()* transforma el array en objeto. 
+
+```js
+const arrayEntries = [
+  ['name', 'Ferney'],
+  ['email', 'ferneynava@gmail.com'],
+  ['age', 26]
+]
+
+const usuario = Object.fromEntries(arrayEntries)
+
+console.log(usuario)
+/* {
+  name: 'Ferney',
+  email: 'ferneynava@gmail.com'
+  age: 26
+}
 ```
 
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>

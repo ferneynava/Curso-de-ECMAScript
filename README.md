@@ -58,6 +58,7 @@
     - [Try catch y fromEntries](#try-catch-y-fromentries)
   - [ECMAScript 11 (ES11 o ES2020)](#ecmascript-11-es11-o-es2020)
     - [Optional chaining](#optional-chaining)
+    - [BigInt y Nullish](#bigint-y-nullish)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -1502,6 +1503,69 @@ Si abusas del encademiento opcional y existe un error en un objeto, el programa 
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
 ---
+
+#### BigInt y Nullish
+
+*BigInt, números enteros muy grandes*
+
+El dato primitivo *bigint* permite **manejar números enteros muy grandes**. Existen dos formas de crear un *bigint*: el número entero seguido de *n* o mediante la función *BigInt*. 
+
+```js
+const aBigNumber = 899867566537653456456n
+const anotherBigNumber = BigInt(899867566537653456456)
+
+typeof 899867566537653456456n // "bigint"
+```
+
+JavaScript tiene límites numéricos, un máximo **Number.MAX_SAFE_INTEGER** y un mínimo **Number.MIN_SAFE_INTEGER**
+
+```js
+const max = Number.MAX_SAFE_INTEGER // 9007199254740991
+const min = Number.MIN_SAFE_INTEGER // -9007199254740991
+```
+
+Al pasar de los limites anteriormente mencionados, los cálculos muestran resultados erróneos. Los *bigint* ayudan a manejar operaciones de enteros fuera de los límites.  
+
+```js
+const increment = 2
+const number = Number.MAX_SAFE_INTEGER + increment //  9007199254740992 sin el BigInt
+const bigInt = BigInt(Number.MAX_SAFE_INTEGER) + BigInt(increment) //9007199254740993n con el BigInt
+```
+
+Se añade la misma cantidad a ambos tipos de datos, sin embargo, el tipo numérico da un resultado diferente al esperado. 
+
+*Operador Nullish Coalescing*
+
+El operador nullish coalescing ( ?? ) consiste en evaluar una variable si es *undefined* o *null* para asignarle un valor. 
+
+El siguiente ejemplo se lee como: ¿usuario.name es undefined o null? Si es así, asígnale un valor por defecto "Ferney", caso contrario asigna el valor de usuario.name.  
+
+```js
+const usuario1 = {}
+const nombre1 = usuario1.name ?? "Ferney"
+
+const usuario2 = {name: "Camilo"}
+const nombre2 = usuario2.name ?? "Ferney"
+
+console.log(nombre1) // 'Ferney'
+console.log(nombre2) // 'Camilo'
+```
+
+*Diferencia entre el operador OR y el Nullish coalescing*
+
+El operador OR ( || ) evalúa un valor false. Un valor false es aquel que es falso en un contexto booleano, estos son: 0, "" (string vacío), false, NaN, undefined o null. 
+
+Puede que reciba una variable con un valor false que necesitas asignarle a otra variable, que no sea null o undefined. Si evalúas con el operador OR, este lo cambiará, provocando un resultado erróneo. 
+
+```js
+const id = 0
+
+const orId = id || "Sin id"
+const nullish = id ?? "Sin id"
+
+console.log(orId) // Sin id
+console.log(nullish) // 0 
+```
 
 ### Prerequisites
 

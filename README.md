@@ -60,6 +60,7 @@
     - [Optional chaining](#optional-chaining)
     - [BigInt y Nullish](#bigint-y-nullish)
     - [Promise.allSettled ](#promiseallsettled)
+    - [GlobalThis y matchAll](#globalthis-y-matchall)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -1616,6 +1617,63 @@ Promise.allSettled([promesa1, promesa2, promesa3])
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
 ---
+
+#### GlobalThis y matchAll 
+
+*Objeto global para cualquier plataforma* 
+
+El motor de JavaScript, compila tu archivo y lo convierte en código que entiende el computador, al iniciar la compilación crea un objeto global. 
+
+Este objeto global proporciona funciones y variables propias e integradas en el lenguaje o el entorno. Dependiendo la plataforma, este objeto global tendrá un nombre diferente. 
+
+En el navegador el objeto global es *window*, para Node.js es *global*, y así para cada entorno. Sin embargo, en Node.js no podrás acceder a *window*, ni en el navegador podrás acceder a *global*. 
+
+Para estandarizar el objeto global se creó *globalThis*, un objeto compatible para cualquier plataforma.  
+
+```js
+// Ejecuta el siguiente código y observa que muestra
+console.log(window)
+console.log(globalThis)
+
+// En el navegador
+window === globalThis // true
+
+// En Node.js
+
+global === globalThis // true
+```
+
+*Método matchAll para expresiones regulares*
+
+El método matchAll de los strings **devuelve un iterable** con todas las coincidencias del strings específico a partir de una expresión regular, colocada como argumento. 
+
+```js
+const regex = /\b(Apple)+\b/g
+const fruit = "Apple, Banana, Kiwi, Apple, Orange, etc. etc. etc."
+
+// Transformación del iterable retornado a array
+const array = [...fruit.matchAll(regex)]
+console.log(array)
+
+/*
+[
+  [
+    'Apple',
+    'Apple',
+    index: 0,
+    input: 'Apple, Banana, Kiwi, Apple, Orange, etc. etc. etc.',
+    groups: undefined
+  ],
+  [
+    'Apple',
+    'Apple',
+    index: 21,
+    input: 'Apple, Banana, Kiwi, Apple, Orange, etc. etc. etc.',
+    groups: undefined
+  ]
+]
+*/
+```
 
 ### Prerequisites
 

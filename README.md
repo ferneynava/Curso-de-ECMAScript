@@ -61,6 +61,7 @@
     - [BigInt y Nullish](#bigint-y-nullish)
     - [Promise.allSettled ](#promiseallsettled)
     - [GlobalThis y matchAll](#globalthis-y-matchall)
+    - [Dynamic Import](#)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -1674,6 +1675,56 @@ console.log(array)
 ]
 */
 ```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+---
+
+#### Dynamic Import
+
+*Cómo utilizar importación dinámica*
+
+Consiste en cargar los módulos cuando el usuario los vaya a utilizar, y no al iniciar la aplicación. Permite que la página web sea más rápida, porque descarga menos recursos. 
+
+La expresión *import()* recibe un argumento de tipo string con la ruta del módulo a importar y devuelve una promesa. 
+
+```js
+const ruta = "./modulo.js"
+
+// Utilizando promesas
+import(ruta)
+  .then( modulo => {
+    modulo.funcion1()
+    modulo.funcion2()
+  })
+  .catch(error => console.log(error))
+
+// Uilizando async/await
+async function importarModulo(rutaDelModulo){
+  const modulo = await import(rutaDelModulo)
+  modulo.function1()
+  modulo.function2()
+}
+
+importarModulo(ruta)
+```
+
+*Ejemplo utilizando importación dinamica*
+
+De esta manera puedes utilizar una importación dinámica en tu aplicación para desencadenar una descarga de un módulo cuando el usuario lo vaya a utilizar. Por ejemplo, al realizar clic en un botón. 
+
+```js
+const boton = document.getElementById("boton")
+
+boton.addEventListener("click", async function() {
+  const modulo = await import("./modulo.js")
+  modulo.funcion()
+})
+```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+---
 
 ### Prerequisites
 

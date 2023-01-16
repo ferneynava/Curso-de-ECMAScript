@@ -61,7 +61,9 @@
     - [BigInt y Nullish](#bigint-y-nullish)
     - [Promise.allSettled ](#promiseallsettled)
     - [GlobalThis y matchAll](#globalthis-y-matchall)
-    - [Dynamic Import](#)
+    - [Dynamic Import](#dynamic-import)
+  - [ECMAScript 12 (ES12 o ES2021)](#ecmascript-12-es12-o-es2021)
+    - [Numeric-separators y replaceAll](#numeric-separators-y-replaceall)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -1720,6 +1722,55 @@ boton.addEventListener("click", async function() {
   const modulo = await import("./modulo.js")
   modulo.funcion()
 })
+```
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+---
+
+### ECMAScript 12 (ES12 o ES2021)
+
+#### Numeric-separators y replaceAll
+
+*Separadores numéricos* 
+
+Ayudan a la legibilidad de cantidades con varias cifras. Se utiliza el caracter guion bajo ( _ ) para separar las cifras, y no afecta a la ejecución del programa.
+
+Lo ideal es separar cada 3 cifras, para visualizar los miles, millones, billones, etc. 
+
+```js
+// Baja legibilidad
+const numero1 = 3501548945
+console.log(numero1) // 3501548945
+
+// Alta legibilidad
+const numero2 = 3_501_548_945
+console.log(numero2) // 3501548945
+```
+
+De esta manera podemos identificar el número rápidamente. 
+
+*Método replaceAll*
+
+El método *replaceAll* retorna un nuevo string, remplazando todos los elementos por otro. 
+
+Este método recibe dos argumentos:
+- El patrón a reemplazar, puede ser un string o una expresión regular. 
+- El nuevo elemento que sustituye al reemplazado. 
+
+Este metodo soluciona el problema que tenía *replace*, que realizaba la misma función de reemplazar elementos, pero solamente *una sola vez* por invocación. 
+
+```js
+const mensaje = "JavaScript es maravilloso, con JavaScript puede crear el futuro de la web."
+
+mensaje.replace("JavaScript", "Python")
+// "Python es maravillo, con JavaScript puede crear el futuro de la web."
+
+mensaje.replaceAll("JavaScript", "Python")
+// "Puthon es maravillo, con Python puede crear el futuro de la web."
+
+mensaje.replaceAll(/a/g, "*")
+// "J*v*Script es m*r*villoso, con J*v*Script puede cre*r el futuro de l* web."
 ```
 
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>

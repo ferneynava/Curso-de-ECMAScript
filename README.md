@@ -67,6 +67,7 @@
     - [Promise-any y métodos privados](#promise-any-y-métodos-privados)
   - [ECMAScript 13 (ES13 o ES2022)](#ecmascript-13-es13-o-es2022)
     - [At](#at)
+    - [Top level await en el consumo de una API](#top-level-await-en-el-consumo-de-una-api)
 
 <p align="right">(<a href="#readme-top">volvel arriba</a>)</p>
 
@@ -1854,6 +1855,7 @@ nombres[nombres.length - 1] // "Lina"
 ```
 
 Se puede utilizar la notación de corchetes, pero necesitas obtener la longitud del *array* y restarle una unidad, generando mucho código que puede volverse dificil de leer. 
+
 ```js
 const nombres = ["Andres", "Monica", "Damaris", "Lina", "Ramiro"]
 
@@ -1863,6 +1865,27 @@ nombres[nombres.length - 1] // "Lina"
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
 ---
+
+#### Top level await en el consumo de una API
+
+Permite utilizar la palabra reservada *await*, sin estar dentro de una función asíncrona con *async*. Sin embargo, únicamente se puede utilizar *await* en la parte superior del archivo de un módulo. 
+
+*Cómo utilizar top level await* 
+
+Cuando se introdujo funciones asíncronas, si utilizabas *await* fuera de *async*, existirá un error de sintáxis. 
+
+```js
+// Error
+await fetch(URL)
+// SyntaxError: await is only valid in async function
+```
+
+Ahora, con *top level await* esto es posible, sin ningún error. Esto puede servir para importaciones de manera dinámica o iniciar la conexión de tus bases de datos. Siempre y cuando respetes que debe estar en la parte encima del archivo de tipo módulo. 
+
+<p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
+
+---
+
 
 ### Prerequisites
 

@@ -82,7 +82,7 @@
 **ECMAScript es el estándar que en la actualidad se encarga de regir como debe ser interpretado y funcionar el lenguaje JavaScript, a través de una serie de versiones que añaden funcionalidad nuevas.**
 
 *El primer navegador web:*  
-- 1950: Inicio de las computadoras, surguen para analizar temas de la segunda guerra mundial.
+- 1950: Inicio de las computadoras, surgen para analizar temas de la segunda guerra mundial.
 
 - 1969: Se creo la red ARPADET una forma de comunicar dos computadoras, para compartir información.
 
@@ -92,9 +92,9 @@
 
 - 1994: Marc Andreessen y James H. Clark fundaron Netscape Communications Corporation el primer navegador comercial y que inicio una revolución de la información.
 
-Entre 1995 y 2001, se enfrentaron Netscape y Microsoft para lograr posicionar comercialmente su propio navegador. Quizas Netscape fue el gran perdedor en las guerras de los navegadores es una de las historias más apasaionantes de la crónica de la Red. 
+Entre 1995 y 2001, se enfrentaron Netscape y Microsoft para lograr posicionar comercialmente su propio navegador. Quizás Netscape fue el gran perdedor en las guerras de los navegadores es una de las historias más apasionantes de la crónica de la Red. 
 
-- 1995: Internet Explorer primer navegador web creador por Microsoft. **Mocha** es un lenguaje de programación propuesta creada por Netscape, poco despues sería nombrado **liveScript** y finalmente JavaScript. **JScript** es un lenguaje de programaciónpara la web propuesta creada por Microsoft.  
+- 1995: Internet Explorer primer navegador web creador por Microsoft. **Mocha** es un lenguaje de programación propuesta creada por Netscape, poco después sería nombrado **liveScript** y finalmente JavaScript. **JScript** es un lenguaje de programación para la web propuesta creada por Microsoft.  
 
 - 1996: CSS propuesta de estilos creado por Microsoft. 
 
@@ -109,19 +109,19 @@ Entre 1995 y 2001, se enfrentaron Netscape y Microsoft para lograr posicionar co
 --- 
 #### ¿Qué es el TC39?
 
-**TC39 grupo de desarrolladores, academicos encargados de revisar y actualizar cada nueva propuesta o funcionalidades, bajo el mando de ECMA. El estándar se caracteriza por una serie de pasos que cada propuesta sigue para publicar en alguna versión de ECMAScript** 
+**TC39 grupo de desarrolladores, académicos encargados de revisar y actualizar cada nueva propuesta o funcionalidades, bajo el mando de ECMA. El estándar se caracteriza por una serie de pasos que cada propuesta sigue para publicar en alguna versión de ECMAScript** 
 
 *Etapas de una nueva propuesta para ECMAScript*
 
-- Stage0:  Strawperson (borrador, cualquier persona puede tener una idea para implementar en el estandar)
+- Stage0:  Strawperson (borrador, cualquier persona puede tener una idea para implementar en el estándar)
 
 - Stage1: Proposal (propuesta formal)
 
-- Stage2: Draft (borrador, como va a funcionar la implementacion el impacto entre otros)
+- Stage2: Draft (borrador, como va a funcionar la implementación el impacto entre otros)
 
 - Stage3: Candidate (se elige el candidato, vamos a tener una propuesta que va ayudar a mejorar el lenguaje.)
 
-- Stage4: Finished (va a ser desplegada en la version normalmente en JUNIO)
+- Stage4: Finished (va a ser desplegada en la versión normalmente en JUNIO)
 
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
@@ -142,7 +142,7 @@ La re-declaración consiste en volver a declarar una variable, y la re-asignaci�
  - let: No se puede re-declarada pero si re-asignada. 
  - const: No se puede re-declarada, ni re-asignada. 
 
-Al momento de re-declarar una variable con let y const, este producira un error "variable ya declarada"
+Al momento de re-declarar una variable con let y const, este producirá un error "variable ya declarada"
 
 **Ejemplo de declaración y asignación en diferentes líneas** 
 
@@ -200,7 +200,7 @@ nombreConst = "Otro const" // TypeError: Assignment to constant variable.
 
 *Funciones flecha (arrow functions)*
 
-Consiste en una función anónima. Las funciones anónimas permite no asignarle a un nombre a un conjunto de instrucciones que deseeamos ejecutarlo sin necesidad de asociarlo. 
+Consiste en una función anónima. Las funciones anónimas permite no asignarle a un nombre a un conjunto de instrucciones que deseamos ejecutarlo sin necesidad de asociarlo. 
 
 ```js
 // Función tradicional
@@ -240,7 +240,7 @@ function suma (num1, num2) {
 const suma = (num1, num2) => num1 + num2
 ```
 
-Si se requiere de más lineas y desea utilizarlo de una manera implícita, deberás envolver el cuerpo de la función entre paréntesis. 
+Si se requiere de más líneas y desea utilizarlo de una manera implícita, deberás envolver el cuerpo de la función entre paréntesis. 
 
 ```js
 const suma = (num1, num2) => (
@@ -268,7 +268,7 @@ console.log(mensaje) // "Mi nombre es Ferney y tengo 26 años."
 
 *Cómo utilizar las plantillas literales*
 
-Se emplea el caracter acento grave (`) y para incluir las variables se utiliza la sintaxis ```${variable}```
+Se emplea el carácter acento grave (`) y para incluir las variables se utiliza la sintaxis ```${variable}```
 
 ```js
 var nombre = "Ferney"
@@ -375,7 +375,7 @@ console.log(edad) // 26
 console.log(plataforma) // "Platzi"
 ```
 
-Gracias a desestructuración de objetos podemos reralizar lo mismo, pero en una sola línea, logrando que el código sea más legible y mantenible
+Gracias a desestructuración de objetos podemos realizar lo mismo, pero en una sola línea, logrando que el código sea más legible y mantenible
 
 ```js
 const usuario = { nombre: "FerneyNava", edad: 26, plataforma: "Platzi" }
@@ -444,7 +444,7 @@ console.log(tres) // 3
 
 En el momento en que una función retorna un array, puedes guardarlo en una variable. Por ende, se puede utilizar la desestructuración para utilizar esos valores por separado de manera legible.
 
-En el sisguiente ejemplo, la función **useState** retorna un array con dos elementos: un valor y otra función actualizada. 
+En el siguiente ejemplo, la función **useState** retorna un array con dos elementos: un valor y otra función actualizada. 
 
 ```js
 function useState(value){
@@ -477,7 +477,7 @@ const otherArray = [...array] // [ "F", "e", "r", "n", "e", "y"]
 
 *Copiar arrays utilizando el operador de propagación*
 
-Realizar una copia de un array, tendras que tener cuidado de la referencia en memoria. Los arrays se guardan en una referencia en la memoria del computador, al crear una copia, este tendrá la misma referencia que el original. Por este motivo si cambias algo en la copia, tambien lo harás en el original. 
+Realizar una copia de un array, tendrás que tener cuidado de la referencia en memoria. Los arrays se guardan en una referencia en la memoria del computador, al crear una copia, este tendrá la misma referencia que el original. Por este motivo si cambias algo en la copia, también lo harás en el original. 
 
 ```js
 const originalArray = [1,2,3,4,5]
@@ -558,7 +558,7 @@ objetoOriginal === objetoCopia // false
 
 *Cuidado con la copia en diferentes niveles de profundidad objetos*
 
-El operador de propagación sirve para crear una copia en un soslo nivel de profundidad, si existen objetos dentro de un objeto a copiar. Entonces los sub-elementos en cada nivel, tendrán la misma referencia en el copia y en el original. 
+El operador de propagación sirve para crear una copia en un solo nivel de profundidad, si existen objetos dentro de un objeto a copiar. Entonces los sub-elementos en cada nivel, tendrán la misma referencia en el copia y en el original. 
 
 ```js
 const original = {datos: [1, [2, 3], 4, 5]}
@@ -568,7 +568,7 @@ original === copia // false
 original["datos"] === copia["datos"] // true 
 ```
 
-Recientemente salió una forma de producir una copia profunda con **StructuredCole**, es una característica reciente. Como es una caracteristica reciente tiene un soporte en navegadores de un 87.71%
+Recientemente salió una forma de producir una copia profunda con **StructuredCole**, es una característica reciente. Como es una característica reciente tiene un soporte en navegadores de un 87.71%
 
 ```js
 // Array
@@ -601,7 +601,7 @@ function hola (primero, segundo, ...resto){
 hola(1,2,3,4,5)
 ```
 
-Tambien sirve para obtener los elementos restantes de un array u objeto usando desestructuración. 
+También sirve para obtener los elementos restantes de un array u objeto usando desestructuración. 
 
 ```js
 const objeto = {
@@ -698,7 +698,7 @@ objeto // { nombre: 'Andres', edad: 23, id: 1 }
 
 #### Promesas
 
-Las promesas es una forma de manejar el asincronismo en JavaScipt y se representa como un objeto que puede generar un valor unico a futuro, tiene dos estados, o esta resuelta o incluye una razón por la cual no ha sido resuelta la solución. 
+Las promesas es una forma de manejar el asincronismo en JavaScript y se representa como un objeto que puede generar un valor único a futuro, tiene dos estados, o esta resuelta o incluye una razón por la cual no ha sido resuelta la solución. 
 
 *Cómo utilizar las promesas*
 
@@ -789,7 +789,7 @@ ES6 introduce una forma de manejar código en archivos de manera modular. Esto i
 
 Para utilizar los módulos, debes tener mínimo dos archivos, uno para exportar las funciones y otro que las importe para ejecutarlas. 
 
-Es importante de que si iniciaste un proyecto con NPM (Node Package Manager) con Node.js, necesitas esfecificar que el código es modular en el archivo.json de la siguiente manera: 
+Es importante de que si iniciaste un proyecto con NPM (Node Package Manager) con Node.js, necesitas especificar que el código es modular en el archivo.json de la siguiente manera: 
 
 ```json
 // package.json
@@ -836,7 +836,7 @@ add(2,2) // 4
 
 Si importamos el módulo con un nombre diferente, existirá un error de sintaxis. 
 
-Para importar todas las funcionalidades de un archivo se utiliza un asteristico ( * ) y se puede cambiar el nombre para evitar la repetición de variables o funciones a través de la palabra reservada *as*. 
+Para importar todas las funcionalidades de un archivo se utiliza un asterisco ( * ) y se puede cambiar el nombre para evitar la repetición de variables o funciones a través de la palabra reservada *as*. 
 
 ```js
 // main.js
@@ -914,7 +914,7 @@ Son funciones especiales que pueden pausar su ejecución, luego volver al punto 
 La sintaxis de los generadores es la siguiente: 
 
 - La palabra reservada function* (con el asterisco al final)
-- La palabra reservada *yield* que hace referencia al valor retornado cada vez que se invoque, recordando eñ valor anterior. 
+- La palabra reservada *yield* que hace referencia al valor retornado cada vez que se invoque, recordando el valor anterior. 
 - Crear una variable a partir de la función generadora. 
 - El método *next* devuelve un objeto que contiene una propiedad *value* con cada valor de yield; y otra propiedad *done* con el valor *true* o *false* si el generador ha terminado.
 
@@ -967,7 +967,7 @@ for (let numero of array){
 }
 ```
 
-Hay que tener en cuenta que solo podrás acceder a sus valores, y no a sus referencias, por lo que si quieres cambiar los elementos del array, necesitarás un índice array(indice).
+Hay que tener en cuenta que solo podrás acceder a sus valores, y no a sus referencias, por lo que si quieres cambiar los elementos del array, necesitarás un índice array(índice).
 
 ```js
 for (let numero of array){
@@ -1052,7 +1052,7 @@ Determina si un array o string incluye un determinado elemento. Devuelve **true*
 
 Este método recibe dos argumentos: 
 - El elemento a comparar
-- El índice inciial desde donde comparar hatas el último elemento. 
+- El índice inicial desde donde comparar hasta el último elemento. 
 
 *Índices positivos y negativos*
 
@@ -1070,7 +1070,7 @@ Los índices negativos comienzan desde -1 hasta el negativo de la longitud total
 
 *Ejemplos utilizando el método includes*
 
-Método includes se utiliza para arrays y strings. El método es sensible a mayúsculas, minúsculas y expacios. 
+Método includes se utiliza para arrays y strings. El método es sensible a mayúsculas, minúsculas y espacios. 
 
 ```js
 // Utilizando strings
@@ -1095,11 +1095,11 @@ frutas.includes("piña", -1) // false
 frutas[0].includes("man") // true 
 ```
 
-En objetos tambien existen formas para saber si existe una propiedad. Solo evalua las clases de los objetos. Con la siguiente palabra resevada y los siguientes metodos. 
+En objetos también existen formas para saber si existe una propiedad. Solo evalúa las clases de los objetos. Con la siguiente palabra reservada y los siguientes métodos. 
 
-- La palabra reservada in; evalua todas las propiedades del objeto y del prototipo.
-- El metodo de objetos **hasOwnProperty**; Evalúa solamente las propiedades del objeto.
-- El metodo **Object.hasOwm**, que recibe el objeto y la propiedad a evaluar.
+- La palabra reservada in; evalúa todas las propiedades del objeto y del prototipo.
+- El método de objetos **hasOwnProperty**; Evalúa solamente las propiedades del objeto.
+- El método **Object.hasOwm**, que recibe el objeto y la propiedad a evaluar.
 
 ```js
 // Utilizando arrays
@@ -1189,7 +1189,7 @@ Padding consiste en rellenar un *string* por el principio o por el final, con el
 
 Este método recibe dos argumentos:
 
-- La longitud máxima a rellenar, incluyento el string inicial. 
+- La longitud máxima a rellenar, incluyendo el string inicial. 
 - El *string* para rellenar, por defecto, es un espacio. 
 
 *Método padStart*
@@ -1298,7 +1298,7 @@ promesa()
 
 *Generados asíncronos*
 
-Los generadores asíncronos son semejantes a los [Generadores](#generator), pero combinando sintáxis de promesas. 
+Los generadores asíncronos son semejantes a los [Generadores](#generator), pero combinando sintaxis de promesas. 
 
 ```js
 async function* anotherGenerator(){
@@ -1373,7 +1373,7 @@ result4 // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 *Método flatMap*
 
-Es un combinación de los métodos *map* y *flat*. Primero realiza la interación  de los elementos del array (como si fuera map), y después los aplana en una sola profundidad (como si fuera *flat*)
+Es un combinación de los métodos *map* y *flat*. Primero realiza la interacción  de los elementos del array (como si fuera map), y después los aplana en una sola profundidad (como si fuera *flat*)
 
 Este método es **inmutable**, es decir, retorna un nuevo array con los cambios y no cambia el array original. 
 
@@ -1426,7 +1426,7 @@ result3 // "       hola"
 
 *Parámetro opcional de catch*
 
-El parametro de *catch*, permite omitir el error si es necesario. 
+El parámetro de *catch*, permite omitir el error si es necesario. 
 
 ```js
 try {
@@ -1446,7 +1446,7 @@ Se recomienda manejar el error como parámetro, puesto de que tiene más informa
 
 *Cómo transformar un array de arrays en un objeto*
 
-El metodo **Object.fromEntries** devuelve un objeto a partir de un arrays donde sus elementos son las *entries* en forma [propiedad, valor]
+El método **Object.fromEntries** devuelve un objeto a partir de un arrays donde sus elementos son las *entries* en forma [propiedad, valor]
 
 Se puede considerar la opción inversa de **Object.entries()**. *entries()*  transforma el objectos a arrays y en cambio el *fromEntries()* transforma el array en objeto. 
 
@@ -1506,7 +1506,7 @@ Pero, ¿por qué usaría propiedades de un objeto vacío? Cuando realizas petici
 
 *No abuses del encadenamiento opcional*
 
-El encadenamiento opcional se debe utilizar únicamente cuando problamente un valor no exista. 
+El encadenamiento opcional se debe utilizar únicamente cuando probablemente un valor no exista. 
 
 Por ejemplo, en un objeto *usuario* que siempre existe, pero la propiedad redes es opcional, entonces se debería escribir *usuario.redes?.facebook* y no *usuario?.redes?.facebook*. 
 
@@ -1741,7 +1741,7 @@ boton.addEventListener("click", async function() {
 
 *Separadores numéricos* 
 
-Ayudan a la legibilidad de cantidades con varias cifras. Se utiliza el caracter guion bajo ( _ ) para separar las cifras, y no afecta a la ejecución del programa.
+Ayudan a la legibilidad de cantidades con varias cifras. Se utiliza el carácter guion bajo ( _ ) para separar las cifras, y no afecta a la ejecución del programa.
 
 Lo ideal es separar cada 3 cifras, para visualizar los miles, millones, billones, etc. 
 
@@ -1765,7 +1765,7 @@ Este método recibe dos argumentos:
 - El patrón a reemplazar, puede ser un string o una expresión regular. 
 - El nuevo elemento que sustituye al reemplazado. 
 
-Este metodo soluciona el problema que tenía *replace*, que realizaba la misma función de reemplazar elementos, pero solamente *una sola vez* por invocación. 
+Este método soluciona el problema que tenía *replace*, que realizaba la misma función de reemplazar elementos, pero solamente *una sola vez* por invocación. 
 
 ```js
 const mensaje = "JavaScript es maravilloso, con JavaScript puede crear el futuro de la web."
@@ -1788,7 +1788,7 @@ mensaje.replaceAll(/a/g, "*")
 
 *Métodos privados de clases*
 
-Consiste en *limitar el acceso a propiedades y métodos* agregando el caracter numeral ( # ). Por defecto, las propiedades y métodos de una clase en JavaScript son públicas, es decir, se puede acceder a ellos fuera de la clase. 
+Consiste en *limitar el acceso a propiedades y métodos* agregando el carácter numeral ( # ). Por defecto, las propiedades y métodos de una clase en JavaScript son públicas, es decir, se puede acceder a ellos fuera de la clase. 
 
 ```js
 class Clase {
@@ -1857,7 +1857,7 @@ nombres.at(-3) // Damaris
 nombres[nombres.length - 1] // "Lina"
 ```
 
-Se puede utilizar la notación de corchetes, pero necesitas obtener la longitud del *array* y restarle una unidad, generando mucho código que puede volverse dificil de leer. 
+Se puede utilizar la notación de corchetes, pero necesitas obtener la longitud del *array* y restarle una unidad, generando mucho código que puede volverse difícil de leer. 
 
 ```js
 const nombres = ["Andres", "Monica", "Damaris", "Lina", "Ramiro"]
@@ -1875,7 +1875,7 @@ Permite utilizar la palabra reservada *await*, sin estar dentro de una función 
 
 *Cómo utilizar top level await* 
 
-Cuando se introdujo funciones asíncronas, si utilizabas *await* fuera de *async*, existirá un error de sintáxis. 
+Cuando se introdujo funciones asíncronas, si utilizabas *await* fuera de *async*, existirá un error de sintaxis. 
 
 ```js
 // Error

@@ -79,7 +79,7 @@
 
 #### Historia de JavaScript: ¿Qué es ECMAScript?
 
-**ECMAScript es el estándar que en la actualidad se encarga de regir como debe ser interpretado y funcionar el lenguaje JavaScript, a través de una serie de versiones que añaden funcionalidad nuevas.**
+**ECMAScript es el estándar que en la actualidad se encarga de regir como debe ser interpretado y funcionar el lenguaje JavaScript, a través de una serie de versiones que añaden funcionalidades nuevas.**
 
 *El primer navegador web:*  
 - 1950: Inicio de las computadoras, surgen para analizar temas de la segunda guerra mundial.
@@ -94,7 +94,7 @@
 
 Entre 1995 y 2001, se enfrentaron Netscape y Microsoft para lograr posicionar comercialmente su propio navegador. Quizás Netscape fue el gran perdedor en las guerras de los navegadores es una de las historias más apasionantes de la crónica de la Red. 
 
-- 1995: Internet Explorer primer navegador web creador por Microsoft. **Mocha** es un lenguaje de programación propuesta creada por Netscape, poco después sería nombrado **liveScript** y finalmente JavaScript. **JScript** es un lenguaje de programación para la web propuesta creada por Microsoft.  
+- 1995: Internet Explorer primer navegador web creador por Microsoft. **Mocha** es un lenguaje de programación propuesta creada por Netscape, poco después sería nombrado **LiveScript** y finalmente JavaScript. **JScript** es un lenguaje de programación para la web propuesta creada por Microsoft.  
 
 - 1996: CSS propuesta de estilos creado por Microsoft. 
 

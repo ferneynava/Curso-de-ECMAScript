@@ -84,7 +84,7 @@
 *El primer navegador web:*  
 - 1950: Inicio de las computadoras, surgen para analizar temas de la segunda guerra mundial.
 
-- 1969: Se creo la red ARPADET una forma de comunicar dos computadoras, para compartir información.
+- 1969: Se creo la red ARPANET una forma de comunicar dos computadoras, para compartir información.
 
 - 1990: Tim Berners-lee Invento la World Wide Web las bases de la web.
 

@@ -113,15 +113,15 @@ Entre 1995 y 2001, se enfrentaron Netscape y Microsoft para lograr posicionar co
 
 *Etapas de una nueva propuesta para ECMAScript*
 
-- Stage0:  Strawperson (borrador, cualquier persona puede tener una idea para implementar en el estándar)
+- Stage0:  Strawperson (borrador, cualquier persona puede tener una idea para implementar en el estándar).
 
-- Stage1: Proposal (propuesta formal)
+- Stage1: Proposal (propuesta formal).
 
-- Stage2: Draft (borrador, como va a funcionar la implementación el impacto entre otros)
+- Stage2: Draft (borrador, como va a funcionar la implementación el impacto entre otros).
 
-- Stage3: Candidate (se elige el candidato, vamos a tener una propuesta que va ayudar a mejorar el lenguaje.)
+- Stage3: Candidate (se elige el candidato, vamos a tener una propuesta que va ayudar a mejorar el lenguaje).
 
-- Stage4: Finished (va a ser desplegada en la versión normalmente en JUNIO)
+- Stage4: Finished (va a ser desplegada en la versión normalmente en JUNIO).
 
 <p align="right">(<a href="#índice">⬆ Volver a índice</a>)</p>
 
